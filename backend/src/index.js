@@ -9,6 +9,7 @@ const port = 3000;
 app.use(express.json());
 app.use(cors());
 
+//Posts
 app.get("/posts", async (req, res) => {
   let db = await connect();
 
@@ -94,6 +95,7 @@ app.delete("/posts/:id", async (req, res) => {
   }
 });
 
+//Comments
 app.post("/posts/:id/comments", async (req, res) => {
   let data = req.body;
   let id = req.params.id;
